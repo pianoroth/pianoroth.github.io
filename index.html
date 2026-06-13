@@ -3,188 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pianoroth | Klavierbau & Handwerk</title>
+    <title>pianoroth | stimmung reparatur service</title>
     <style>
+        /* Sachliche, reduzierte Farbpalette */
         :root {
-            --bg-color: #fcfbf9;
+            --bg-color: #ffffff;
             --text-dark: #1a1a1a;
-            --text-muted: #666666;
-            --accent-gold: #c5a880;
-            --white: #ffffff;
+            --text-muted: #555555;
+            --brand-red: #B22222; /* Angepasst an das Rot im Logo */
+            --light-gray: #f9f9f9;
         }
 
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-dark);
             margin: 0;
             padding: 0;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
-        /* Sprachschalter Logik */
+        /* Sprach-Umschalter Logik */
         html[lang="de"] .lang-en { display: none !important; }
         html[lang="en"] .lang-de { display: none !important; }
 
-        /* Navigation */
+        /* Navigation & Header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 8%;
+            padding: 40px 8% 20px 8%;
             background-color: var(--bg-color);
-            border-bottom: 1px solid #eae6df;
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid #eeeeee;
         }
 
+        /* Logo exakt nach Bildvorlage */
         .logo {
-            font-size: 1.4em;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-transform: lowercase;
+            font-size: 2.8em;
+            letter-spacing: -1.5px;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            line-height: 1;
+        }
+        
+        .logo-piano { color: #000000; }
+        .logo-roth { color: var(--brand-red); }
+        
+        .logo-subtext {
+            display: flex;
+            flex-direction: column;
+            font-size: 0.35em;
+            color: var(--brand-red);
+            margin-left: 12px;
+            letter-spacing: 0;
+            line-height: 1.1;
         }
 
         nav a {
             color: var(--text-dark);
             text-decoration: none;
-            margin-left: 25px;
-            font-family: 'Arial', sans-serif;
-            font-size: 0.85em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-left: 30px;
+            font-size: 0.9em;
             cursor: pointer;
+            transition: color 0.2s;
         }
+        nav a:hover { color: var(--brand-red); }
+        .lang-switch { color: var(--brand-red) !important; font-weight: normal; }
 
-        nav a:hover { color: var(--accent-gold); }
-        .lang-switch { color: var(--accent-gold) !important; font-weight: bold; }
-
-        /* Hero Bereich mit Werkstatt-Bild */
+        /* Minimalistischer Startbereich */
         .hero {
-            padding: 80px 8%;
-            text-align: center;
-            background-color: #f5f2eb;
+            padding: 80px 8% 60px 8%;
+            text-align: left;
         }
 
         .hero h1 {
-            font-size: 3em;
+            font-size: 2.2em;
             font-weight: 300;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 1.1em;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .hero-image-container {
-            margin-top: 40px;
-            width: 100%;
-            max-width: 900px;
-            display: inline-block;
-        }
-
-        .hero-image-container img {
-            width: 100%;
-            height: auto;
-            max-height: 450px;
-            object-fit: cover;
-            border-radius: 2px;
-        }
-
-        /* Hauptbereich: Über mich / Vita */
-        .main-content {
-            padding: 80px 8%;
-            background-color: var(--white);
-            display: flex;
-            gap: 60px;
-        }
-
-        .about-text { flex: 1.2; }
-        .image-gallery { flex: 0.8; display: flex; flex-direction: column; gap: 30px; }
-        
-        .image-gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 2px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-        }
-
-        .section-title {
-            font-size: 1.8em;
-            font-weight: 300;
-            border-bottom: 1px solid var(--accent-gold);
-            padding-bottom: 8px;
-            margin-bottom: 25px;
-        }
-
-        /* Sachliche Erfolgsliste (Ähnlich wie Novo Quartet) */
-        .timeline {
-            margin-top: 35px;
-        }
-
-        .timeline-item {
-            margin-bottom: 30px;
-            padding-left: 15px;
-            border-left: 2px solid var(--accent-gold);
-        }
-
-        .time-year {
-            font-family: 'Arial', sans-serif;
-            font-weight: bold;
-            font-size: 0.95em;
-            color: var(--accent-gold);
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .timeline-item p {
+            color: var(--text-dark);
             margin: 0;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 span {
+            color: var(--brand-red);
+            margin: 0 10px;
+        }
+
+        /* Inhalt: Text und Bilder */
+        .content-grid {
+            display: flex;
+            gap: 80px;
+            padding: 0 8% 80px 8%;
+        }
+
+        .text-column {
+            flex: 1;
+        }
+
+        .image-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .image-column img {
+            width: 100%;
+            height: auto; /* Erhält das natürliche Seitenverhältnis */
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.4em;
+            font-weight: 400;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--text-dark);
+            padding-bottom: 10px;
+        }
+
+        h2.spaced {
+            margin-top: 60px;
+        }
+
+        p {
+            font-size: 1.05em;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        /* Referenzen */
+        ul.reference-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.reference-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #eeeeee;
             font-size: 1em;
+            color: var(--text-muted);
+        }
+
+        ul.reference-list li strong {
+            color: var(--text-dark);
+            font-weight: 500;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        ul.reference-list li a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        ul.reference-list li a:hover {
+            color: var(--brand-red);
         }
 
         /* Footer */
         footer {
-            background-color: var(--bg-color);
-            padding: 50px 8% 30px 8%;
-            border-top: 1px solid #eae6df;
-            text-align: center;
+            background-color: var(--light-gray);
+            padding: 60px 8% 40px 8%;
+            text-align: left;
+            font-size: 0.9em;
+            color: var(--text-muted);
         }
 
-        .contact-box h2 { font-weight: 300; font-size: 1.6em; margin-bottom: 15px; }
-        .contact-box p { font-family: 'Arial', sans-serif; font-size: 0.95em; margin-bottom: 30px; }
-        
-        .legal-links { margin-top: 40px; font-size: 0.85em; }
-        .legal-links a { color: var(--text-muted); text-decoration: none; }
-        
-        .impressum {
+        .footer-grid {
+            display: flex;
+            gap: 100px;
+            margin-bottom: 40px;
+        }
+
+        .footer-grid strong {
+            color: var(--text-dark);
+            font-weight: 500;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .impressum-toggle {
+            color: var(--text-muted);
+            text-decoration: underline;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        .impressum-box {
             display: none;
-            text-align: left;
-            max-width: 500px;
-            margin: 20px auto;
-            padding: 20px;
-            background: var(--white);
-            border: 1px solid #eae6df;
-            font-size: 0.9em;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
         }
 
         @media (max-width: 768px) {
-            header { flex-direction: column; gap: 15px; }
-            .main-content { flex-direction: column; }
-            .hero h1 { font-size: 2.2em; }
+            header { flex-direction: column; align-items: flex-start; gap: 20px; padding: 20px 8%; }
+            nav a { margin-left: 0; margin-right: 15px; }
+            .content-grid { flex-direction: column; gap: 40px; }
+            .footer-grid { flex-direction: column; gap: 40px; }
+            .hero { padding: 40px 8%; }
+            .hero h1 { font-size: 1.5em; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">pianoroth</div>
+        <div class="logo">
+            <span class="logo-piano">piano</span><span class="logo-roth">roth</span>
+            <div class="logo-subtext">
+                <span>stimmung</span>
+                <span>reparatur</span>
+                <span>service</span>
+            </div>
+        </div>
         <nav>
-            <a href="#about" class="lang-de">Über mich</a>
-            <a href="#about" class="lang-en">About</a>
+            <a href="#profil" class="lang-de">Profil</a>
+            <a href="#profil" class="lang-en">Profile</a>
+            <a href="#referenzen" class="lang-de">Referenzen</a>
+            <a href="#referenzen" class="lang-en">References</a>
             <a href="#contact" class="lang-de">Kontakt</a>
             <a href="#contact" class="lang-en">Contact</a>
             <a class="lang-switch" onclick="switchLanguage()">EN / DE</a>
@@ -192,80 +236,81 @@
     </header>
 
     <section class="hero">
-        <h1 class="lang-de">Klavierbau in Präzision</h1>
-        <h1 class="lang-en">Precision Piano Craftsmanship</h1>
-        <p class="lang-de">Klanggestaltung und handwerkliche Perfektion für Ihr Instrument.</p>
-        <p class="lang-en">Tonal design and technical perfection for your instrument.</p>
-        
-        <div class="hero-image-container">
-            <img src="werkstatt.jpg" alt="Klavierstimmer bei der Arbeit">
-        </div>
+        <h1 class="lang-de">stimmung <span>|</span> reparatur <span>|</span> service</h1>
+        <h1 class="lang-en">tuning <span>|</span> repair <span>|</span> service</h1>
     </section>
 
-    <main class="main-content" id="about">
+    <main class="content-grid">
         
-        <div class="about-text">
-            <h2 class="section-title lang-de">Profil & Qualifikation</h2>
-            <h2 class="section-title lang-en">Profile & Qualification</h2>
+        <div class="text-column">
+            <h2 id="profil" class="lang-de">Profil</h2>
+            <h2 id="profil" class="lang-en">Profile</h2>
             
             <p class="lang-de">
-                Das Klavierbauer-Handwerk verbindet traditionelle Holz- und Metallbearbeitung mit feinstem Gehör. Nach dem erfolgreichen Abschluss meiner Ausbildung widme ich mich der präzisen Wartung, Ausarbeitung und klanglichen Optimierung von Klavieren und Flügeln. Der Fokus liegt dabei auf Langlebigkeit und der Erarbeitung des optimalen Klangcharakters jedes Instruments.
+                Fachgerechte Betreuung von Klavieren und Flügeln. Nach meiner fundierten handwerklichen Ausbildung widme ich mich der präzisen Wartung, Ausarbeitung und klanglichen Optimierung von Instrumenten. Im Jahr 2025 wurde diese Arbeit durch den Zentralverband des Deutschen Handwerks (ZDH) mit dem 1. Bundessieg bei der Deutschen Meisterschaft im Handwerk gewürdigt.
             </p>
             <p class="lang-en">
-                The art of piano building combines traditional wood and metalworking with precise acoustic skills. Following the successful completion of my training, I dedicate myself to the precise maintenance, regulation, and tonal optimization of pianos and grand pianos. The focus remains strictly on longevity and uncovering the ideal tonal character of each instrument.
+                Professional maintenance of upright and grand pianos. Following my profound technical training, I dedicate myself to the precise maintenance, regulation, and tonal optimization of instruments. In 2025, this work was honored by the Central Association of German Crafts (ZDH) with the 1st National Prize at the German Craft Skills Competition.
             </p>
 
-            <div class="timeline">
-                
-                <div class="timeline-item">
-                    <span class="time-year">2025</span>
-                    <p class="lang-de"><strong>1. Bundessieger – Deutsche Meisterschaft im Handwerk (German Craft Skills)</strong><br>Ausgezeichnet durch den Zentralverband des Deutschen Handwerks (ZDH) im Klavier- und Cembalobauerhandwerk.</p>
-                    <p class="lang-en"><strong>1st National Winner – German Craft Skills Competition</strong><br>Awarded by the Central Association of German Crafts (ZDH) in the field of piano and harpsichord making.</p>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="time-year">2025</span>
-                    <p class="lang-de"><strong>Senatsempfang im Hamburger Rathaus</strong><br>Offizielle Ehrung des erfolgreichen Handwerksnachwuchses für herausragende Leistungen bei der deutschen Meisterschaft.</p>
-                    <p class="lang-en"><strong>Senate Reception at Hamburg City Hall</strong><br>Official honoring of the highly successful young craft generation for outstanding achievements.</p>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="time-year">2025</span>
-                    <p class="lang-de"><strong>Erfolgreicher Abschluss der Berufsausbildung</strong><br>Abschluss der Fachausbildung zum Klavier- und Cembalobauer an der Oscar-Walcker-Schule Ludwigsburg.</p>
-                    <p class="lang-en"><strong>Completion of Vocational Training</strong><br>Graduation as a certified piano and harpsichord builder at the Oscar-Walcker-Schule Ludwigsburg.</p>
-                </div>
-
-            </div>
+            <h2 class="spaced lang-de" id="referenzen">Referenzen</h2>
+            <h2 class="spaced lang-en" id="referenzen">References</h2>
+            
+            <ul class="reference-list">
+                <li>
+                    <strong><a href="https://www.alexanderkrichel.de/" target="_blank">Alexander Krichel (Konzertpianist)</a></strong>
+                    <span class="lang-de">Generalüberholung eines Klaviers.</span>
+                    <span class="lang-en">Complete piano overhaul.</span>
+                </li>
+                <li>
+                    <strong>Hochschule für Musik und Theater Hamburg</strong>
+                    <span class="lang-de">Stimmung und Betreuung von Hochschulinstrumenten.</span>
+                    <span class="lang-en">Tuning and maintenance of university instruments.</span>
+                </li>
+                <li>
+                    <strong>Raum Leipzig & Hamburg</strong>
+                    <span class="lang-de">Kontinuierliche handwerkliche und klangliche Betreuung von Klavieren und Flügeln für Privatpersonen, aktive Musiker und Schulen.</span>
+                    <span class="lang-en">Continuous technical and tonal maintenance of pianos for private individuals, active musicians, and schools.</span>
+                </li>
+            </ul>
         </div>
 
-        <div class="image-gallery">
-            <img src="gesellenstueck.jpg" alt="Klavierbauer mit Gesellenstück">
-            <img src="detail.jpg" alt="Detailaufnahme Klavierbauarbeiten">
+        <div class="image-column">
+            <!-- Bilder passen sich nun in Originalmaßen an -->
+            <img src="werkstatt.jpg" alt="Arbeit in der Werkstatt">
+            <img src="gesellenstueck.jpg" alt="Arbeit am Gesellenstück">
         </div>
 
     </main>
 
     <footer id="contact">
-        <div class="contact-box">
-            <h2 class="lang-de">Kontakt</h2>
-            <h2 class="lang-en">Contact</h2>
-            <p>
-                <strong>E-Mail:</strong> service@pianoroth.de<br>
-                <strong>Web:</strong> www.pianoroth.de
-            </p>
+        <div class="footer-grid">
+            <div>
+                <strong class="lang-de">Kontakt</strong>
+                <strong class="lang-en">Contact</strong>
+                Benjamin Roth<br>
+                E-Mail: service@pianoroth.de<br>
+                Web: www.pianoroth.de
+            </div>
+            <div>
+                <strong class="lang-de">Werkstatt</strong>
+                <strong class="lang-en">Workshop</strong>
+                [Deine Straße und Hausnummer]<br>
+                [Deine PLZ und Ort]<br>
+            </div>
         </div>
 
-        <div class="legal-links">
-            <span class="lang-de">&copy; 2026 pianoroth. Alle Rechte vorbehalten.</span>
-            <span class="lang-en">&copy; 2026 pianoroth. All rights reserved.</span>
-            | <a href="#" onclick="toggleImpressum(); return false;">Impressum & Datenschutz</a>
+        <div>
+            <span class="lang-de">&copy; 2026 pianoroth.</span>
+            <span class="lang-en">&copy; 2026 pianoroth.</span>
+            <a class="impressum-toggle" onclick="toggleImpressum()">Impressum & Datenschutz</a>
         </div>
 
-        <div id="impressum-box" class="impressum">
+        <div id="impressum-box" class="impressum-box">
             <strong>Impressum (Angaben gemäß § 5 DDG):</strong><br>
-            [Dein Vorname] [Dein Nachname]<br>
-            [Deine Straße und Hausnummer]<br>
-            [Deine PLZ und Ort]<br><br>
+            Jurek Roth<br>
+            Ecksteinstr. 42<br>
+            04277 Leipzig<br><br>
             <strong>Kontakt:</strong><br>
             E-Mail: service@pianoroth.de
         </div>
