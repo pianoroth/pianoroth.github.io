@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pianoroth | stimmung reparatur service</title>
     <style>
-        /* Farbpalette & Typografie (Klassisch, elegant, feine Linien) */
+        /* Farbpalette & Typografie */
         :root {
             --bg-color: #ffffff;
             --text-dark: #111111;
@@ -22,10 +22,13 @@
             margin: 0;
             padding: 0;
             line-height: 1.7;
+            font-weight: 200;
+            letter-spacing: 1px;
         }
 
         /* Sprach-Umschalter Logik */
         html[lang="de"] .lang-en { display: none !important; }
+        html[lang="en"] .lang-en { display: block !important; }
         html[lang="en"] .lang-de { display: none !important; }
 
         /* Sektionen-Logik (Single-Page-Application) */
@@ -56,6 +59,7 @@
             border-bottom: 1px solid var(--light-border);
         }
 
+        /* Logo: Schmal, elegant, exakte Höhe */
         .logo {
             display: flex;
             align-items: center;
@@ -63,10 +67,10 @@
         }
         
         .logo-main {
-            font-size: 2.8em; 
-            font-weight: 300;
-            letter-spacing: -0.5px;
-            line-height: 0.8;
+            font-size: 3.5em; 
+            font-weight: 300; 
+            letter-spacing: 0px;
+            line-height: 1;
             color: var(--text-dark);
         }
 
@@ -78,12 +82,12 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            height: 2.6em; 
-            font-size: 0.85em;
+            height: 3.3em; 
+            font-size: 1.05em;
             color: var(--brand-red);
-            margin-left: 12px;
-            line-height: 1.1;
-            font-family: 'Georgia', serif;
+            margin-left: 15px;
+            line-height: 1;
+            font-weight: 400;
         }
 
         nav {
@@ -94,7 +98,7 @@
         nav a {
             color: var(--text-dark);
             text-decoration: none;
-            font-size: 1.15em;
+            font-size: 1.25em;
             cursor: pointer;
             transition: color 0.2s;
         }
@@ -107,7 +111,7 @@
             color: var(--brand-red) !important; 
         }
 
-        /* Layout-Grid für Inhalte */
+        /* Flex-Blöcke für wechselnde Anordnungen (Text/Bild) */
         .content-block {
             display: flex;
             gap: 60px;
@@ -136,6 +140,14 @@
             border: 1px solid var(--light-border);
         }
 
+        .image-caption {
+            font-size: 0.9em;
+            color: var(--text-muted);
+            margin-top: 8px;
+            display: block;
+            font-style: italic;
+        }
+
         /* Urkunden-Anordnung (Nebeneinander) */
         .certificate-container {
             display: flex;
@@ -162,7 +174,7 @@
         /* Einheitlicher, eleganter Stil für Hauptüberschriften */
         h1 {
             font-size: 2em;
-            font-weight: 300;
+            font-weight: 400;
             margin-top: 0;
             margin-bottom: 30px;
             border-bottom: 1px solid var(--text-dark);
@@ -177,7 +189,6 @@
             margin: 0 auto;
         }
 
-        /* Reduzierte Schriftgröße im Hero-Bereich für garantierte Einzeiligkeit */
         .hero-title {
             font-size: 1.8em; 
             font-weight: 300;
@@ -194,10 +205,10 @@
         }
 
         p {
-            font-size: 1.1em;
+            font-size: 1.15em;
             color: var(--text-muted);
             margin-bottom: 25px;
-            text-align: justify; /* Einheitlicher Blocksatz */
+            text-align: justify; 
         }
 
         /* Textverlinkungen */
@@ -212,7 +223,7 @@
             color: var(--brand-red);
         }
 
-        /* Startseiten-Kontaktblock & Button ohne unschöne Unterstreichungen */
+        /* Startseiten-Kontaktblock & Button */
         .start-contact-block {
             margin-top: 40px;
             padding: 30px 0;
@@ -222,7 +233,7 @@
         .start-phone {
             font-size: 1.4em;
             color: var(--text-dark);
-            text-decoration: none; /* Entfernt Unterstreichung */
+            text-decoration: none; 
             display: block;
             margin-bottom: 25px;
             border: none;
@@ -261,9 +272,9 @@
         ul.clean-list li h3 {
             color: var(--text-dark);
             font-weight: bold;
-            font-size: 1.25em; /* Größer und hervorgehoben */
+            font-size: 1.25em; 
             margin: 0 0 10px 0;
-            border-bottom: 1px solid var(--brand-red); /* Dezent rot unterstrichen */
+            border-bottom: 1px solid var(--brand-red); 
             padding-bottom: 4px;
             display: inline-block;
         }
@@ -331,7 +342,7 @@
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
-            font-size: 0.85em; /* Deutlich kleinere Schrift */
+            font-size: 0.85em; 
             color: #555555;
             line-height: 1.5;
         }
@@ -391,7 +402,6 @@
                 </p>
 
                 <div class="start-contact-block">
-                    <!-- Edel gestaltete Telefonnummer ohne Unterstreichung -->
                     <a href="tel:+49176000000" class="start-phone">Telefon: 0176 / 000 00 00</a>
                     <a href="mailto:service@pianoroth.de?subject=Terminanfrage" class="btn-action lang-de">Termin anfragen</a>
                     <a href="mailto:service@pianoroth.de?subject=Appointment%20Request" class="btn-action lang-en">Termin anfragen</a>
@@ -410,21 +420,21 @@
             <h1 class="lang-en">Services</h1>
         </div>
 
-        <!-- 1. Leistungsblock -->
+        <!-- 1. Leistungsblock (Texte getauscht: Stimmung & Intonation) -->
         <div class="content-block">
             <div class="text-column">
                 <ul class="clean-list">
                     <li>
                         <h3 class="lang-de">Stimmung</h3>
                         <h3 class="lang-en">Tuning</h3>
-                        <p class="lang-de">Eine regelmäßige Stimmung sichert die klangliche Reinheit und trägt maßgeblich zur Werterhaltung Ihres Instruments bei. Ich empfehlen eine Stimmung ein- bis zweimal jährlich, abhängig von klimatischen Schwankungen und der individuellen Beanspruchung des Instruments. Neben der reinen Tonhöhe achte ich dabei stets auf den mechanischen Gesamtzustand.</p>
+                        <p class="lang-de">Eine regelmäßige Stimmung sichert die klangliche Reinheit und trägt maßgeblich zur Werterhaltung Ihres Instruments bei. Ich empfehle eine Stimmung ein- bis zweimal jährlich, abhängig von klimatischen Schwankungen und der individuellen Beanspruchung des Instruments. Neben der reinen Tonhöhe achte ich dabei stets auf den mechanischen Gesamtzustand.</p>
                         <p class="lang-en">Regular tuning ensures tonal purity and contributes significantly to the value preservation of your instrument. A tuning is recommended once or twice a year, depending on climatic fluctuations and individual use. Alongside the pitch, the overall mechanical condition is always evaluated.</p>
                     </li>
                     <li>
-                        <h3 class="lang-de">Reparatur & Regulation</h3>
-                        <h3 class="lang-en">Repair & Regulation</h3>
-                        <p class="lang-de">Das Spielwerk eines Klaviers oder Flügels unterliegt einem natürlichen Verschleiß. Durch eine präzise Regulation der Mechanik wird eine optimale Kraftübertragung und ein feines, gleichmäßiges Spielgefühl wiederhergestellt. Bei älteren Instrumenten führe ich zudem Teil- oder Generalüberholungen durch – vom Austausch der Hammerköpfe bis zur Instandsetzung der akustischen Anlage.</p>
-                        <p class="lang-en">The action of a piano is subject to natural wear. Precise regulation of the mechanics restores optimal power transmission and a fine, even touch. For older instruments, partial or complete overhauls are performed – from replacing hammerheads to restoring the acoustic assembly.</p>
+                        <h3 class="lang-de">Intonation</h3>
+                        <h3 class="lang-en">Voicing</h3>
+                        <p class="lang-de">Die Intonation ist die klangliche Formung des Instruments. Durch das gezielte Bearbeiten und Stechen der Hammerfilze wird der Charakter des Klaviers oder Flügels herausgearbeitet. So lassen sich Härten im Klang abmildern oder ein tragfähigerer, dynamischerer Ton entwickeln, der exakt auf Ihre klanglichen Vorstellungen und die Raumakustik abgestimmt ist.</p>
+                        <p class="lang-en">Voicing is the tonal shaping of the instrument. Through targeted treatment and voicing of the hammer felts, the character is refined. Harshness in the sound can be softened, or a more carrying, dynamic tone developed, perfectly matched to the acoustics of the room.</p>
                     </li>
                 </ul>
             </div>
@@ -433,15 +443,15 @@
             </div>
         </div>
 
-        <!-- 2. Leistungsblock -->
+        <!-- 2. Leistungsblock (Texte getauscht: Reparatur & Regulation nach unten) -->
         <div class="content-block reverse">
             <div class="text-column">
                 <ul class="clean-list">
                     <li>
-                        <h3 class="lang-de">Intonation</h3>
-                        <h3 class="lang-en">Voicing</h3>
-                        <p class="lang-de">Die Intonation ist die klangliche Formung des Instruments. Durch das gezielte Bearbeiten und Stechen der Hammerfilze wird der Charakter des Klaviers oder Flügels herausgearbeitet. So lassen sich Härten im Klang abmildern oder ein tragfähigerer, dynamischerer Ton entwickeln, der exakt auf Ihre klanglichen Vorstellungen und die Raumakustik abgestimmt ist.</p>
-                        <p class="lang-en">Voicing is the tonal shaping of the instrument. Through targeted treatment and voicing of the hammer felts, the character is refined. Harshness in the sound can be softened, or a more carrying, dynamic tone developed, perfectly matched to the acoustics of the room.</p>
+                        <h3 class="lang-de">Reparatur & Regulation</h3>
+                        <h3 class="lang-en">Repair & Regulation</h3>
+                        <p class="lang-de">Das Spielwerk eines Klaviers oder Flügels unterliegt einem natürlichen Verschleiß. Durch eine präzise Regulation der Mechanik wird eine optimale Kraftübertragung und ein feines, gleichmäßiges Spielgefühl wiederhergestellt. Bei älteren Instrumenten führe ich zudem Teil- oder Generalüberholungen durch – vom Austausch der Hammerköpfe bis zur Instandsetzung der akustischen Anlage.</p>
+                        <p class="lang-en">The action of a piano is subject to natural wear. Precise regulation of the mechanics restores optimal power transmission and a fine, even touch. For older instruments, partial or complete overhauls are performed – from replacing hammerheads to restoring the acoustic assembly.</p>
                     </li>
                 </ul>
             </div>
@@ -479,6 +489,7 @@
 
     <!-- Vita & Referenzen -->
     <section id="vita-referenzen" class="content-section">
+        
         <div class="content-block">
             <div class="text-column">
                 <h1 class="lang-de">Vita</h1>
@@ -487,7 +498,7 @@
                     Ausbildung zum Klavier- und Cembalobauer in der Hamburger Klangmanufaktur. Der Fachbetrieb ist auf die Generalüberholung von Steinway-Konzertflügeln spezialisiert und wurde 2024 als „Handwerksbetrieb des Jahres“ ausgezeichnet.
                 </p>
                 <p class="lang-de">
-                    Erfolgreicher Abschluss der Berufsausbildung im Jahr 2025 als 1. Landessieger in Hamburg sowie Verleihung des 1. Bundessiegs im Klavier- und Cembalobauerhandwerk bei der Deutschen Meisterschaft im Handwerk[cite: 3, 5].
+                    Erfolgreicher Abschluss der Berufsausbildung im Jahr 2025 als 1. Landessieger in Hamburg sowie Verleihung des 1. Bundessiegs im Klavier- und Cembalobauerhandwerk bei der Deutschen Meisterschaft im Handwerk.
                 </p>
                 <p class="lang-de">
                     Einblicke in die Spezialisierung finden Sie im offiziellen <a href="https://www.klangmanufaktur.de/werkstatt/#werkstattportraet" class="text-link" target="_blank">Werkstattportrait der Klangmanufaktur</a>.
@@ -497,11 +508,13 @@
                     Training as a piano and harpsichord maker at the Klangmanufaktur Hamburg. The workshop specializes in the complete restoration of Steinway concert grand pianos and was awarded "Craft Business of the Year" in 2024.
                 </p>
                 <p class="lang-en">
-                    Graduation in 2025 as the 1st State Winner in Hamburg and recipient of the 1st National Prize in Piano and Harpsichord Making at the German Craft Skills Competition[cite: 3, 5].
+                    Graduation in 2025 as the 1st State Winner in Hamburg and recipient of the 1st National Prize in Piano and Harpsichord Making at the German Craft Skills Competition.
                 </p>
             </div>
             <div class="image-column">
                 <img src="gesellenstueck.jpg" alt="Gesellenstück Klavierbau">
+                <span class="image-caption lang-de">Oktavmodell (Gesellenstück)</span>
+                <span class="image-caption lang-en">Octave model (Graduation piece)</span>
             </div>
         </div>
 
@@ -514,11 +527,11 @@
                     <li>
                         <strong class="lang-de">Deutsche Meisterschaft im Handwerk 2025</strong>
                         <strong class="lang-en">German Craft Skills 2025</strong>
-                        <span>1. Bundessieger im Klavier- und Cembalobau in Deutschland[cite: 3, 5]</span><br>
-                        <span>1. Landessieger im Klavier- und Cembalobau in Hamburg[cite: 3]</span>
+                        <span>1. Bundessieger im Klavier- und Cembalobau in Deutschland</span><br>
+                        <span>1. Landessieger im Klavier- und Cembalobau in Hamburg</span>
                     </li>
                     <li>
-                        <strong><a href="https://www.alexanderkrichel.de/" target="_blank" style="color:var(--text-dark); text-decoration:none;">Alexander Krichel (Konzertpianist)</a></strong>
+                        <strong><a href="https://www.alexanderkrichel.de/" target="_blank">Alexander Krichel (Konzertpianist)</a></strong>
                         <span>Generalüberholung eines Klaviers</span>
                     </li>
                     <li>
@@ -536,24 +549,25 @@
         <div class="certificate-container">
             <div class="certificate-box">
                 <img src="urkunde-landessieger.jpg" alt="Urkunde Landessieger Hamburg">
-                <span class="lang-de">1. Landessieger Hamburg[cite: 3]</span>
-                <span class="lang-en">1st State Winner Hamburg[cite: 3]</span>
+                <span class="lang-de">1. Landessieger Hamburg</span>
+                <span class="lang-en">1st State Winner Hamburg</span>
             </div>
             <div class="certificate-box">
                 <img src="urkunde-bundessieger.jpg" alt="Urkunde Bundessieger Deutschland">
-                <span class="lang-de">1. Bundessieger Deutschland[cite: 3, 5]</span>
-                <span class="lang-en">1st National Winner Germany[cite: 3, 5]</span>
+                <span class="lang-de">1. Bundessieger Deutschland</span>
+                <span class="lang-en">1st National Winner Germany</span>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Gleichmäßig aufgeteilter Footer -->
     <footer>
         <div class="footer-layout">
             <div class="footer-left">
                 Benjamin Roth<br>
                 [Deine Straße und Hausnummer]<br>
-                [Deine PLZ] Leipzig
+                [Deine PLZ] Leipzig<br><br>
+                <span style="font-size: 0.85em; opacity: 0.7;">Fotografien: [Name des Fotografen]</span>
             </div>
             <div class="footer-right">
                 E-Mail: service@pianoroth.de<br>
@@ -573,7 +587,8 @@
             [Deine Straße und Hausnummer]<br>
             [Deine PLZ] Leipzig<br><br>
             <strong>Kontakt:</strong><br>
-            E-Mail: service@pianoroth.de
+            E-Mail: service@pianoroth.de<br><br>
+            <span style="font-size: 0.9em; opacity: 0.7;">Bildnachweise: Alle auf dieser Webseite genutzten Fotografien wurden von [Name des Fotografen] angefertigt.</span>
         </div>
     </footer>
 
