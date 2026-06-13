@@ -9,19 +9,20 @@
         :root {
             --bg-color: #ffffff;
             --text-dark: #111111;
-            --text-muted: #444444;
-            --brand-red: #A81C1C; /* Angepasst an das Rot im aktuellen Bild */
+            --text-muted: #333333;
+            --brand-red: #A81C1C; /* Exaktes Logo-Rot */
             --light-gray: #f9f9f9;
         }
 
         body {
-            /* ISOCPEUR als primäre Schrift, gefolgt von passenden serifenlosen Schriften */
+            /* ISOCPEUR als primäre Schrift */
             font-family: 'ISOCPEUR', 'Bahnschrift', 'Segoe UI', Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-dark);
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            font-weight: 300;
         }
 
         /* Sprach-Umschalter Logik */
@@ -30,12 +31,12 @@
 
         /* Sektionen-Logik (Klick-Navigation) */
         section.content-section {
-            display: none; /* Versteckt alle Sektionen standardmäßig */
+            display: none; 
             animation: fadeIn 0.4s ease-in-out;
         }
         
         section.content-section.active {
-            display: block; /* Zeigt nur die aktive Sektion */
+            display: block; 
         }
 
         @keyframes fadeIn {
@@ -56,7 +57,7 @@
             border-bottom: 1px solid #eeeeee;
         }
 
-        /* Logo exakt nach dem neuen Bild (pianoroth dünner, exakte Höhe) */
+        /* Logo exakt nach Vorlage: Schmaler und exakte Höhe */
         .logo {
             display: flex;
             align-items: center;
@@ -64,10 +65,10 @@
         }
         
         .logo-main {
-            font-size: 4em; /* Sehr groß */
-            font-weight: 200; /* Sehr dünn */
-            letter-spacing: -1px;
-            line-height: 0.8;
+            font-size: 3.5em; 
+            font-weight: 300; /* Sehr schmale Schrift */
+            letter-spacing: 0px;
+            line-height: 1;
             color: var(--text-dark);
         }
 
@@ -79,11 +80,12 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            height: 3.2em; /* Exakte Höhe passend zum Hauptschriftzug */
-            font-size: 1em;
+            height: 3.3em; /* Exakte Höhe passend zum Hauptschriftzug */
+            font-size: 1.05em;
             color: var(--brand-red);
             margin-left: 15px;
             line-height: 1;
+            font-weight: 400;
         }
 
         nav {
@@ -94,10 +96,9 @@
         nav a {
             color: var(--text-dark);
             text-decoration: none;
-            font-size: 1.1em;
+            font-size: 1.2em;
             cursor: pointer;
             transition: color 0.2s;
-            text-transform: lowercase;
         }
         
         nav a:hover, nav a.current { 
@@ -136,7 +137,7 @@
 
         h1 {
             font-size: 2em;
-            font-weight: normal;
+            font-weight: 400;
             margin-top: 0;
             margin-bottom: 25px;
             border-bottom: 1px solid var(--text-dark);
@@ -144,10 +145,48 @@
         }
 
         p {
-            font-size: 1.1em;
+            font-size: 1.15em;
             color: var(--text-muted);
             margin-bottom: 25px;
             text-align: justify;
+        }
+
+        /* Call-to-Action Startseite */
+        .contact-cta {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: var(--light-gray);
+            border-left: 3px solid var(--brand-red);
+        }
+
+        .contact-cta p {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: var(--text-dark);
+        }
+
+        .contact-phone {
+            font-size: 1.5em;
+            font-weight: 400;
+            color: var(--text-dark);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 25px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--brand-red);
+            color: #ffffff !important;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            text-decoration: none;
+            border-radius: 30px; /* Abgerundeter Button */
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #8B1515;
         }
 
         /* Listen für Leistungen & Referenzen */
@@ -160,13 +199,13 @@
         ul.clean-list li {
             padding: 15px 0;
             border-bottom: 1px solid #eeeeee;
-            font-size: 1.1em;
+            font-size: 1.15em;
             color: var(--text-muted);
         }
 
         ul.clean-list li strong {
             color: var(--text-dark);
-            font-weight: normal;
+            font-weight: 400;
             display: block;
             font-size: 1.1em;
         }
@@ -176,7 +215,7 @@
             background-color: var(--light-gray);
             padding: 60px 8% 40px 8%;
             text-align: left;
-            font-size: 1em;
+            font-size: 1.1em;
             color: var(--text-muted);
             border-top: 1px solid #eeeeee;
         }
@@ -192,7 +231,7 @@
 
         .footer-grid strong {
             color: var(--text-dark);
-            font-weight: normal;
+            font-weight: 400;
             display: block;
             margin-bottom: 5px;
         }
@@ -200,6 +239,7 @@
         .footer-bottom {
             max-width: 1200px;
             margin: 0 auto;
+            font-size: 0.9em;
         }
 
         .impressum-toggle {
@@ -217,6 +257,7 @@
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
+            font-size: 0.9em;
         }
 
         @media (max-width: 900px) {
@@ -224,15 +265,15 @@
             nav { flex-wrap: wrap; gap: 15px; }
             .grid-container { flex-direction: column; gap: 40px; }
             .footer-grid { flex-direction: column; gap: 40px; }
-            .logo-main { font-size: 3em; }
-            .logo-subtext { height: 2.4em; font-size: 0.9em; }
+            .logo-main { font-size: 2.8em; }
+            .logo-subtext { height: 2.6em; font-size: 0.85em; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo" onclick="navigate('start')">
+        <div class="logo" onclick="navigate('startseite')">
             <div class="logo-main">piano<span class="logo-roth">roth</span></div>
             <div class="logo-subtext">
                 <span>stimmung</span>
@@ -241,37 +282,48 @@
             </div>
         </div>
         <nav>
+            <a onclick="navigate('startseite')" id="nav-startseite" class="lang-de current">Startseite</a>
+            <a onclick="navigate('startseite')" id="nav-startseite-en" class="lang-en current">Home</a>
+
             <a onclick="navigate('leistungen')" id="nav-leistungen" class="lang-de">Leistungen</a>
             <a onclick="navigate('leistungen')" id="nav-leistungen-en" class="lang-en">Services</a>
             
             <a onclick="navigate('preise')" id="nav-preise" class="lang-de">Preise</a>
             <a onclick="navigate('preise')" id="nav-preise-en" class="lang-en">Prices</a>
 
-            <a onclick="navigate('vita')" id="nav-vita" class="lang-de">Vita</a>
-            <a onclick="navigate('vita')" id="nav-vita-en" class="lang-en">Biography</a>
-
-            <a onclick="navigate('referenzen')" id="nav-referenzen" class="lang-de">Referenzen</a>
-            <a onclick="navigate('referenzen')" id="nav-referenzen-en" class="lang-en">References</a>
+            <a onclick="navigate('vita-referenzen')" id="nav-vita-referenzen" class="lang-de">Vita & Referenzen</a>
+            <a onclick="navigate('vita-referenzen')" id="nav-vita-referenzen-en" class="lang-en">Bio & References</a>
             
             <a class="lang-switch" onclick="switchLanguage()">EN / DE</a>
         </nav>
     </header>
 
     <!-- Startseite -->
-    <section id="start" class="content-section active">
+    <section id="startseite" class="content-section active">
         <div class="grid-container">
             <div class="text-column">
                 <h1 class="lang-de">Service für Klaviere und Flügel</h1>
                 <h1 class="lang-en">Service for Pianos and Grand Pianos</h1>
                 <p class="lang-de">
-                    Ein Instrument erfordert handwerkliche Präzision und regelmäßige Pflege, um seinen klanglichen und mechanischen Charakter über Generationen zu erhalten. Ich biete professionellen Service – von der fachgerechten Stimmung über mechanische Regulationen bis hin zur umfassenden Generalüberholung.
+                    Ein Instrument erfordert handwerkliche Präzision und regelmäßige Pflege, um seinen klanglichen und mechanischen Charakter über Generationen zu erhalten. Ich biete professionellen Service im Raum Leipzig – von der fachgerechten Stimmung über mechanische Regulationen bis hin zur umfassenden Generalüberholung.
                 </p>
                 <p class="lang-en">
-                    An instrument requires technical precision and regular care to preserve its tonal and mechanical character over generations. I offer professional service – from expert tuning and mechanical regulation to complete overall restorations.
+                    An instrument requires technical precision and regular care to preserve its tonal and mechanical character over generations. I offer professional service in the Leipzig area – from expert tuning and mechanical regulation to complete overall restorations.
                 </p>
+
+                <div class="contact-cta">
+                    <p class="lang-de">Terminvereinbarung oder Fragen?</p>
+                    <p class="lang-en">Appointment or questions?</p>
+                    
+                    <!-- Hier deine echte Telefonnummer einsetzen -->
+                    <a href="tel:+49176000000" class="contact-phone">0176 / 000 00 00</a>
+                    
+                    <a href="mailto:service@pianoroth.de?subject=Terminanfrage" class="btn-primary lang-de">Termin vereinbaren</a>
+                    <a href="mailto:service@pianoroth.de?subject=Appointment%20Request" class="btn-primary lang-en">Book an appointment</a>
+                </div>
             </div>
             <div class="image-column">
-                <img src="werkstatt.jpg" alt="Klavierstimmer Werkstatt">
+                <img src="gesellenstueck.jpg" alt="Klavierbauer Benjamin Roth">
             </div>
         </div>
     </section>
@@ -287,24 +339,25 @@
                     <li>
                         <strong class="lang-de">Stimmung</strong>
                         <strong class="lang-en">Tuning</strong>
-                        <span class="lang-de">Eine regelmäßige Stimmung sichert die klangliche Reinheit und trägt maßgeblich zur Werterhaltung Ihres Instruments bei. Empfohlen wird eine Stimmung ein- bis zweimal jährlich, abhängig von klimatischen Schwankungen und der individuellen Beanspruchung. Neben der reinen Tonhöhe wird dabei stets der mechanische Gesamtzustand geprüft.</span>
-                        <span class="lang-en">Regular tuning ensures tonal purity and contributes significantly to the value preservation of your instrument. A tuning is recommended once or twice a year, depending on climatic fluctuations and individual use. Alongside the pitch, the overall mechanical condition is always evaluated.</span>
+                        <span class="lang-de">Eine regelmäßige Stimmung sichert die klangliche Reinheit und trägt maßgeblich zur Werterhaltung des Instruments bei. Empfohlen wird eine Stimmung ein- bis zweimal jährlich. Neben der Tonhöhe wird stets der mechanische Gesamtzustand geprüft.</span>
+                        <span class="lang-en">Regular tuning ensures tonal purity and contributes significantly to the value preservation of the instrument. Tuning is recommended once or twice a year. Alongside the pitch, the overall mechanical condition is always evaluated.</span>
                     </li>
                     <li>
                         <strong class="lang-de">Reparatur & Regulation</strong>
                         <strong class="lang-en">Repair & Regulation</strong>
-                        <span class="lang-de">Das Spielwerk eines Klaviers oder Flügels unterliegt einem natürlichen Verschleiß. Durch eine präzise Regulation der Mechanik wird eine optimale Kraftübertragung und ein feines, gleichmäßiges Spielgefühl wiederhergestellt. Bei älteren Instrumenten werden zudem Teil- oder Generalüberholungen durchgeführt – vom Austausch der Hammerköpfe bis zur Instandsetzung der akustischen Anlage.</span>
-                        <span class="lang-en">The action of a piano is subject to natural wear. Precise regulation of the mechanics restores optimal power transmission and a fine, even touch. For older instruments, partial or complete overhauls are performed – from replacing hammerheads to restoring the acoustic assembly.</span>
+                        <span class="lang-de">Das Spielwerk unterliegt einem natürlichen Verschleiß. Durch eine präzise Regulation der Mechanik wird eine optimale Kraftübertragung und ein feines, gleichmäßiges Spielgefühl wiederhergestellt. Bei älteren Instrumenten werden Teil- oder Generalüberholungen durchgeführt.</span>
+                        <span class="lang-en">The action is subject to natural wear. Precise regulation of the mechanics restores optimal power transmission and a fine, even touch. For older instruments, partial or complete overhauls are performed.</span>
                     </li>
                     <li>
                         <strong class="lang-de">Intonation</strong>
                         <strong class="lang-en">Voicing</strong>
-                        <span class="lang-de">Die Intonation ist die klangliche Formung des Instruments. Durch das gezielte Bearbeiten und Stechen der Hammerfilze wird der Charakter herausgearbeitet. Härten im Klang lassen sich abmildern oder ein tragfähigerer, dynamischerer Ton entwickeln, der exakt auf die akustischen Gegebenheiten des Raumes abgestimmt ist.</span>
-                        <span class="lang-en">Voicing is the tonal shaping of the instrument. Through targeted treatment and voicing of the hammer felts, the character is refined. Harshness in the sound can be softened, or a more carrying, dynamic tone developed, perfectly matched to the acoustics of the room.</span>
+                        <span class="lang-de">Die Intonation ist die klangliche Formung des Instruments. Durch das gezielte Bearbeiten der Hammerfilze wird der Charakter herausgearbeitet. Härten im Klang lassen sich abmildern oder ein tragfähigerer Ton entwickeln, der exakt auf die Raumakustik abgestimmt ist.</span>
+                        <span class="lang-en">Voicing is the tonal shaping of the instrument. Through targeted treatment of the hammer felts, the character is refined. Harshness in the sound can be softened, or a more carrying tone developed, perfectly matched to the room's acoustics.</span>
                     </li>
                 </ul>
             </div>
             <div class="image-column">
+                <img src="werkstatt.jpg" alt="Arbeit in der Werkstatt">
                 <img src="detail.jpg" alt="Klavier Mechanik Detail">
             </div>
         </div>
@@ -318,53 +371,54 @@
                 <h1 class="lang-en">Prices</h1>
                 <p class="lang-de">
                     Die Kosten für Servicearbeiten an Klavieren und Flügeln richten sich nach dem individuellen Zustand des Instruments sowie dem erforderlichen Zeitaufwand. 
-                    <br><br>
-                    Eine reguläre Stimmung wird mit einem Festpreis von <strong>[Betrag] Euro</strong> berechnet. 
-                    <br><br>
-                    Für weiterführende Arbeiten wie die Regulation der Mechanik, Intonation oder umfassende Reparaturen erstelle ich nach einer Begutachtung vor Ort einen transparenten und detaillierten Kostenvoranschlag. Für Anfahrten außerhalb des direkten Einzugsgebietes (Leipzig / Hamburg) können zusätzliche Fahrtkosten anfallen.
                 </p>
+                <p class="lang-de">
+                    Eine reguläre Stimmung im Raum Leipzig wird mit einem Festpreis von <strong>130 Euro</strong> berechnet. 
+                </p>
+                <p class="lang-de">
+                    Für weiterführende Arbeiten wie die Regulation der Mechanik, Intonation oder umfassende Reparaturen erstelle ich nach einer Begutachtung vor Ort einen transparenten und detaillierten Kostenvoranschlag. Für Anfahrten außerhalb des direkten Einzugsgebietes können zusätzliche Fahrtkosten anfallen.
+                </p>
+
                 <p class="lang-en">
                     The costs for service work on upright and grand pianos depend on the individual condition of the instrument and the required time.
-                    <br><br>
-                    A regular tuning is charged at a flat rate of <strong>[Amount] Euros</strong>.
-                    <br><br>
-                    For further work such as action regulation, voicing, or extensive repairs, I will gladly provide a transparent and detailed estimate after an on-site inspection. Additional travel costs may apply for locations outside the direct service area (Leipzig / Hamburg).
+                </p>
+                <p class="lang-en">
+                    A regular tuning in the Leipzig area is charged at a flat rate of <strong>[Amount] Euros</strong>.
+                </p>
+                <p class="lang-en">
+                    For further work such as action regulation, voicing, or extensive repairs, I provide a transparent and detailed estimate after an on-site inspection. Additional travel costs may apply for locations outside the direct service area.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Vita -->
-    <section id="vita" class="content-section">
+    <!-- Vita & Referenzen -->
+    <section id="vita-referenzen" class="content-section">
         <div class="grid-container">
             <div class="text-column">
                 <h1 class="lang-de">Vita</h1>
                 <h1 class="lang-en">Biography</h1>
                 <p class="lang-de">
-                    Benjamin Roth absolvierte seine Ausbildung zum Klavier- und Cembalobauer in der Hamburger Klangmanufaktur, einem Handwerksbetrieb, der auf die Generalüberholung von Steinway-Konzertflügeln spezialisiert ist und 2024 als „Handwerksbetrieb des Jahres“ ausgezeichnet wurde.
-                    <br><br>
-                    Im Jahr 2025 schloss er seine Ausbildung als 1. Landessieger in Hamburg ab und wurde im Rahmen der German Craft Skills als 1. Bundessieger im Klavier- und Cembalobauerhandwerk in Deutschland ausgezeichnet[cite: 3, 5]. 
-                    <br><br>
-                    Heute betreut er Instrumente von Konzertpianisten, Musikhochschulen sowie Privatpersonen mit höchstem handwerklichen und klanglichen Anspruch.
+                    Jurek Roth absolvierte seine Ausbildung zum Klavier- und Cembalobauer in der renommierten Hamburger Klangmanufaktur. Der Handwerksbetrieb ist auf die Generalüberholung von Steinway-Konzertflügeln spezialisiert und wurde 2024 als „Handwerksbetrieb des Jahres“ ausgezeichnet.
+                </p>
+                <p class="lang-de">
+                    Im Jahr 2025 schloss er seine Ausbildung als 1. Landessieger im Klavier- und Cembalobau in Hamburg ab. Im selben Jahr wurde er bei der Deutschen Meisterschaft im Handwerk als 1. Bundessieger im Klavier- und Cembalobau in Deutschland ausgezeichnet.
+                </p>
+                <p class="lang-de">
+                    Heute betreut er Instrumente in Leipzig und Umgebung. Zu seinem Kundenkreis zählen Konzertpianisten, Musikhochschulen sowie Privatpersonen mit höchstem handwerklichen und klanglichen Anspruch.
+                </p>
+
+                <p class="lang-en">
+                    Benjamin Roth completed his training as a piano and harpsichord maker at the renowned Hamburg Klangmanufaktur. The workshop specializes in the complete restoration of Steinway concert grand pianos and was awarded "Craft Business of the Year" in 2024.
                 </p>
                 <p class="lang-en">
-                    Benjamin Roth completed his training as a piano and harpsichord maker at the Hamburg Klangmanufaktur, a workshop specialized in the complete restoration of Steinway concert grand pianos, awarded "Craft Business of the Year" in 2024.
-                    <br><br>
-                    In 2025, he completed his training as the 1st State Winner in Hamburg and was awarded 1st National Winner in Piano and Harpsichord Making in Germany at the German Craft Skills competition[cite: 3, 5].
-                    <br><br>
-                    Today, he maintains instruments for concert pianists, music academies, and private individuals with the highest technical and acoustic standards.
+                    In 2025, he completed his training as the 1st State Winner in Piano and Harpsichord Making in Hamburg. In the same year, he was awarded 1st National Winner in Piano and Harpsichord Making in Germany at the German Craft Skills competition.
                 </p>
-            </div>
-            <div class="image-column">
-                <img src="gesellenstueck.jpg" alt="Klavierbauer Benjamin Roth">
-            </div>
-        </div>
-    </section>
+                <p class="lang-en">
+                    Today, he maintains instruments in and around Leipzig. His clients include concert pianists, music academies, and private individuals with the highest technical and acoustic standards.
+                </p>
 
-    <!-- Referenzen -->
-    <section id="referenzen" class="content-section">
-        <div class="grid-container">
-            <div class="text-column">
+                <br><br>
                 <h1 class="lang-de">Auszeichnungen & Referenzen</h1>
                 <h1 class="lang-en">Awards & References</h1>
                 
@@ -372,8 +426,8 @@
                     <li>
                         <strong class="lang-de">Deutsche Meisterschaft im Handwerk 2025</strong>
                         <strong class="lang-en">German Craft Skills 2025</strong>
-                        <span class="lang-de">1. Bundessieger im Klavier- und Cembalobau in Deutschland[cite: 3, 5].<br>1. Landessieger in Hamburg.</span>
-                        <span class="lang-en">1st National Winner in Piano and Harpsichord Making in Germany[cite: 3, 5].<br>1st State Winner in Hamburg.</span>
+                        <span class="lang-de">1. Bundessieger im Klavier- und Cembalobau in Deutschland.<br>1. Landessieger im Klavier- und Cembalobau in Hamburg.</span>
+                        <span class="lang-en">1st National Winner in Piano and Harpsichord Making in Germany.<br>1st State Winner in Piano and Harpsichord Making in Hamburg.</span>
                     </li>
                     <li>
                         <strong><a href="https://www.alexanderkrichel.de/" target="_blank" style="color:var(--text-dark); text-decoration:none;">Alexander Krichel (Konzertpianist)</a></strong>
@@ -395,7 +449,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer / Kontakt -->
     <footer>
         <div class="footer-grid">
             <div>
@@ -406,7 +460,10 @@
                 www.pianoroth.de
             </div>
             <div>
-                <strong class="lang-de">Standorte</strong>
+                <strong class="lang-de">Werkstatt</strong>
+                <strong class="lang-en">Workshop</strong>
+                Ecksteinstr. 42<br>
+                04277 Leipzig<br>
             </div>
         </div>
 
@@ -430,24 +487,19 @@
     <script>
         // Sektionen-Navigation
         function navigate(sectionId) {
-            // Alle Sektionen ausblenden
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(sec => sec.classList.remove('active'));
             
-            // Alle Navigations-Links zurücksetzen
             const navLinks = document.querySelectorAll('nav a');
             navLinks.forEach(link => link.classList.remove('current'));
 
-            // Geklickte Sektion einblenden
             document.getElementById(sectionId).classList.add('active');
             
-            // Geklickten Link markieren (für beide Sprachen)
             const activeLinkDe = document.getElementById('nav-' + sectionId);
             const activeLinkEn = document.getElementById('nav-' + sectionId + '-en');
             if(activeLinkDe) activeLinkDe.classList.add('current');
             if(activeLinkEn) activeLinkEn.classList.add('current');
 
-            // Nach oben scrollen
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
