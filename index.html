@@ -190,13 +190,15 @@
         }
 
         .hero-title {
-            font-size: 1.8em; 
-            font-weight: 300;
-            color: var(--text-dark);
-            margin: 0;
-            letter-spacing: 0.5px;
-            border: none;
-            padding: 0;
+            /* Skaliert stufenlos: minimal 1.1rem (Handy), ideal 4.5% der Bildschirmbreite, maximal 2.5rem (Großer Monitor) */
+    font-size: clamp(1.1rem, 4.5vw, 2.5rem); 
+    white-space: nowrap; /* Zwingt den Text, auf einer einzigen Zeile zu bleiben */
+    font-weight: 300;
+    color: var(--text-dark);
+    margin: 0;
+    letter-spacing: 0.5px;
+    border: none;
+    padding: 0;
         }
 
         .hero-title span {
@@ -366,7 +368,6 @@
             .footer-right { text-align: left; }
             .logo-main { font-size: 2.8em; }
             .logo-subtext { height: 2.4em; font-size: 0.75em; }
-            .hero-title { font-size: 1.4em; }
         }
     </style>
 </head>
